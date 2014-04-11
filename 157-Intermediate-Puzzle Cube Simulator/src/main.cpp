@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 	cout << "--------------------------------" << endl;
 
 	// Initialise the cube
-	Cube cube();
+	Cube cube;
 
 	// Apply each move in turn
 	for (int i = 1; i < argc; i++) {
