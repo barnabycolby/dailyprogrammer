@@ -4,6 +4,8 @@
 #include "CubeColours.h"
 #include "CubeFace.h"
 
+#include <string>
+
 class Cube {
 public:
 	// Constructor
@@ -11,6 +13,8 @@ public:
 
 	// Destructor
 	~Cube();
+
+	void applyMove(string move);
 
 private:
 	CubeFace *bottom;

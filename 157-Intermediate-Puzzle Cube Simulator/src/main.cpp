@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 	// Apply each move in turn
 	for (int i = 1; i < argc; i++) {
 		cout << "Applying move: " << argv[i] << endl;
-//		cube.applyMove(argv[i]);
+		cube.applyMove(argv[i]);
 	}
 
 	// Print the output

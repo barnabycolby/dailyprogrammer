@@ -1,6 +1,7 @@
 #include "Cube.h"
 
-#include <iostream>
+#include <cstring>
+
 using namespace std;
 
 Cube::Cube() {
@@ -11,6 +12,35 @@ Cube::Cube() {
 	this->right  = new CubeFace(g);
 	this->back   = new CubeFace(o);
 	this->left   = new CubeFace(b);
+}
+
+void Cube::applyMove(string moveString) {
+	CubeColour oldRow[3];
+	if (moveString.compare("F") == 0) {
+	}
+	else if (moveString.compare("B") == 0) {
+	}
+	else if (moveString.compare("R") == 0) {
+	}
+	else if (moveString.compare("L") == 0) {
+	}
+	else if (moveString.compare("T") == 0) {
+	}
+	else if (moveString.compare("B") == 0) {
+	}
+
+	else if (moveString.compare("F'") == 0) {
+	}
+	else if (moveString.compare("B'") == 0) {
+	}
+	else if (moveString.compare("R'") == 0) {
+	}
+	else if (moveString.compare("L'") == 0) {
+	}
+	else if (moveString.compare("T'") == 0) {
+	}
+	else if (moveString.compare("B'") == 0) {
+	}
 }
 
 Cube::~Cube() {
