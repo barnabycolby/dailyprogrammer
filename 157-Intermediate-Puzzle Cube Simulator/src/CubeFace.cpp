@@ -1,6 +1,7 @@
 #include "CubeFace.h"
 
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -12,6 +13,62 @@ CubeFace::CubeFace(CubeColour c)
 			this->pieces[i][j] = c;
 		}
 	}
+}
+
+CubeColour* CubeFace::getBottomRow() {
+	return this->pieces[2];
+}
+
+CubeColour* CubeFace::replaceLeftRow(CubeColour newRow[]) {
+	CubeColour *current = new CubeColour[3];
+	CubeColour tempArray[3] = {
+		this->pieces[0][0],
+		this->pieces[1][0],
+		this->pieces[2][0]
+		};
+	memcpy(current, tempArray, 3*sizeof(CubeColour));
+
+	this->pieces[0][0] = newRow[0];
+	this->pieces[1][0] = newRow[1];
+	this->pieces[2][0] = newRow[2];
+
+	return current;
+}
+
+CubeColour* CubeFace::replaceRightRow(CubeColour newRow[]) {
+	CubeColour *current = new CubeColour[3];
+	CubeColour tempArray[3] = {
+		this->pieces[0][2],
+		this->pieces[1][2],
+		this->pieces[2][2]
+		};
+	memcpy(current, tempArray, 3*sizeof(CubeColour));
+
+	this->pieces[0][2] = newRow[0];
+	this->pieces[1][2] = newRow[1];
+	this->pieces[2][2] = newRow[2];
+
+	return current;
+}
+
+CubeColour* CubeFace::replaceTopRow(CubeColour newRow[]) {
+	CubeColour *current = this->pieces[0];
+
+	this->pieces[0][0] = newRow[0];
+	this->pieces[0][1] = newRow[1];
+	this->pieces[0][2] = newRow[2];
+
+	return current;
+}
+
+CubeColour* CubeFace::replaceBottomRow(CubeColour newRow[]) {
+	CubeColour *current = this->pieces[2];
+
+	this->pieces[2][0] = newRow[0];
+	this->pieces[2][1] = newRow[1];
+	this->pieces[2][2] = newRow[2];
+
+	return current;
 }
 
 void CubeFace::rotateClockwise() {

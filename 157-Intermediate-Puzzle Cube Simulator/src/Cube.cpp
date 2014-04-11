@@ -15,8 +15,13 @@ Cube::Cube() {
 }
 
 void Cube::applyMove(string moveString) {
-	CubeColour oldRow[3];
+	CubeColour *oldRow;
 	if (moveString.compare("F") == 0) {
+		this->front->rotateClockwise();
+		oldRow = this->right->replaceLeftRow(this->top->getBottomRow());
+		oldRow = this->bottom->replaceTopRow(oldRow);
+		oldRow = this->left->replaceRightRow(oldRow);
+		this->top->replaceBottomRow(oldRow);
 	}
 	else if (moveString.compare("B") == 0) {
 	}
