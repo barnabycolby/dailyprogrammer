@@ -29,19 +29,24 @@ void Cube::applyMove(string moveString) {
 	else if (moveString.compare("B") == 0) {
 	}
 
-	// Apply prime moves
-	else if (moveString[moveString.length() - 1] == '\'') {
+	// Apply prime and double moves
+	else if (moveString.length() > 1) {
+		// Calculate the single move
 		string singleMoveString = moveString.substr(0, 1);
-		this->applyMove(singleMoveString);
-		this->applyMove(singleMoveString);
-		this->applyMove(singleMoveString);
-	}
-
-	// Apply double moves
-	else if (moveString[moveString.length() - 1] == '2') {
-		string singleMoveString = moveString.substr(0, 1);
-		this->applyMove(singleMoveString);
-		this->applyMove(singleMoveString);
+		
+		// Calculate how many times it should be applied
+		int numberOfTimesToApply = 0;
+		if (moveString[1] == '2') {
+			numberOfTimesToApply = 2;
+		}
+		else if (moveString[1] == '\'') {
+			numberOfTimesToApply = 3;
+		}
+		
+		// Apply it
+		for (int i = 0; i < numberOfTimesToApply; i++) {
+			this->applyMove(singleMoveString);
+		}
 	}
 }
 
