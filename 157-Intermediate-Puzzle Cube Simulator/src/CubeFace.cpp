@@ -34,6 +34,17 @@ CubeColour* CubeFace::getBottomRow() {
 	return this->pieces[2];
 }
 
+CubeColour* CubeFace::getRightRow() {
+	CubeColour *rightRow = new CubeColour[3];
+	CubeColour tempArray[3] = {
+		this->pieces[0][2],
+		this->pieces[1][2],
+		this->pieces[2][2]
+		};
+	memcpy(rightRow, tempArray, 3*sizeof(CubeColour));
+	return rightRow;
+}
+
 CubeColour* CubeFace::replaceLeftRow(CubeColour newRow[]) {
 	CubeColour *current = new CubeColour[3];
 	CubeColour tempArray[3] = {
