@@ -9,6 +9,8 @@ class CubeFace {
 public:
 	CubeFace(CubeColour c);
 
+	void rotateClockwise();
+
 private:
 	CubeColour pieces[3][3];
 };
