@@ -18,6 +18,7 @@ public:
 	CubeColour* replaceBottomRow(CubeColour newRow[]);
 	CubeColour* getBottomRow();
 	CubeColour* getRightRow();
+	CubeColour* getLeftRow();
 
 	string toString();
 

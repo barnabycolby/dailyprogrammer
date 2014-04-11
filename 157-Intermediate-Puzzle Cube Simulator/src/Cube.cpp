@@ -42,6 +42,11 @@ void Cube::applyMove(string moveString) {
 		this->front->replaceRightRow(oldRow);
 	}
 	else if (moveString.compare("L") == 0) {
+		this->left->rotateClockwise();
+		oldRow = this->front->replaceLeftRow(this->top->getLeftRow());
+		oldRow = this->bottom->replaceLeftRow(oldRow);
+		oldRow = this->back->replaceRightRow(oldRow);
+		this->top->replaceLeftRow(oldRow);
 	}
 	else if (moveString.compare("T") == 0) {
 	}
