@@ -15,6 +15,7 @@ public:
 	~Cube();
 
 	void applyMove(string move);
+	CubeFace getFront();
 
 private:
 	CubeFace *bottom;

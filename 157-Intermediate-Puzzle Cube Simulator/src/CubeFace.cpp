@@ -1,6 +1,6 @@
 #include "CubeFace.h"
 
-#include <iostream>
+#include <sstream>
 #include <cstring>
 
 using namespace std;
@@ -13,6 +13,21 @@ CubeFace::CubeFace(CubeColour c)
 			this->pieces[i][j] = c;
 		}
 	}
+}
+
+string CubeFace::toString() {
+	ostringstream stringStream;
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			stringStream << getTextForEnum(this->pieces[i][j]);
+		}
+		if (i != 2) {
+			stringStream << endl;
+		}
+	}
+
+	return stringStream.str();
 }
 
 CubeColour* CubeFace::getBottomRow() {

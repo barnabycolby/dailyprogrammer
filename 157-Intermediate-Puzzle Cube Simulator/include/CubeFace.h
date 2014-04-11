@@ -3,6 +3,8 @@
 
 #include "CubeColours.h"
 
+#include <string>
+
 using namespace std;
 
 class CubeFace {
@@ -15,6 +17,8 @@ public:
 	CubeColour* replaceTopRow(CubeColour newRow[]);
 	CubeColour* replaceBottomRow(CubeColour newRow[]);
 	CubeColour* getBottomRow();
+
+	string toString();
 
 private:
 	CubeColour pieces[3][3];

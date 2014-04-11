@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	// Print the output
-//	std::cout << endl << cube.front() << endl;
+	std::cout << endl << cube.getFront().toString() << endl;
 
 	// Return cleanly
 	return 0;

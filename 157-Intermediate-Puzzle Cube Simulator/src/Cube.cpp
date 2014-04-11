@@ -14,6 +14,10 @@ Cube::Cube() {
 	this->left   = new CubeFace(b);
 }
 
+CubeFace Cube::getFront() {
+	return *(this->front);
+}
+
 void Cube::applyMove(string moveString) {
 	CubeColour *oldRow;
 	if (moveString.compare("F") == 0) {
