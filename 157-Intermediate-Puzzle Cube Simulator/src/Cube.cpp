@@ -41,6 +41,13 @@ void Cube::applyMove(string moveString) {
 	}
 	else if (moveString.compare("B'") == 0) {
 	}
+
+	// Apply double moves
+	else if (moveString[moveString.length() - 1] == '2') {
+		string singleMoveString = moveString.substr(0, 1);
+		this->applyMove(singleMoveString);
+		this->applyMove(singleMoveString);
+	}
 }
 
 Cube::~Cube() {
