@@ -13,6 +13,8 @@ public:
 
 private:
 	CubeColour pieces[3][3];
+
+	void calculateNextRotationPiece(int *i, int *j);
 };
 
 #endif
