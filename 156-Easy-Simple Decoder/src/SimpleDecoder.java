@@ -2,6 +2,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.File;
+
 public class SimpleDecoder {
 	public static void main(String args[]) throws Exception {
 		// Check that we have the correct number of arguments
@@ -16,11 +20,16 @@ public class SimpleDecoder {
 
 		// Read the file into a byte array
 		Path inputFilePath = Paths.get(inputFile);
-		byte[] inputData = Files.readAllBytes(inputFilePath);
+		byte[] data = Files.readAllBytes(inputFilePath);
 
 		// Minus 4 from all the bytes
-		for (int i = 0; i < inputData.length; i++) {
-			inputData[i] -= 4;
+		for (int i = 0; i < data.length; i++) {
+			data[i] -= 4;
 		}
+
+		// Write the byte array back to the output file
+		BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(new File(outputFile)));
+		outputStream.write(data);
+		outputStream.flush();
 	}
 }
