@@ -30,8 +30,12 @@ string CubeFace::toString() {
 	return stringStream.str();
 }
 
-CubeColour* CubeFace::getBottomRow() {
+CubeColour* CubeFace::getDownRow() {
 	return this->pieces[2];
+}
+
+CubeColour* CubeFace::getUpRow() {
+	return this->pieces[0];
 }
 
 CubeColour* CubeFace::getRightRow() {
@@ -88,7 +92,7 @@ CubeColour* CubeFace::replaceRightRow(CubeColour newRow[]) {
 	return current;
 }
 
-CubeColour* CubeFace::replaceTopRow(CubeColour newRow[]) {
+CubeColour* CubeFace::replaceUpRow(CubeColour newRow[]) {
 	CubeColour *current = this->pieces[0];
 
 	this->pieces[0][0] = newRow[0];
@@ -98,7 +102,7 @@ CubeColour* CubeFace::replaceTopRow(CubeColour newRow[]) {
 	return current;
 }
 
-CubeColour* CubeFace::replaceBottomRow(CubeColour newRow[]) {
+CubeColour* CubeFace::replaceDownRow(CubeColour newRow[]) {
 	CubeColour *current = this->pieces[2];
 
 	this->pieces[2][0] = newRow[0];

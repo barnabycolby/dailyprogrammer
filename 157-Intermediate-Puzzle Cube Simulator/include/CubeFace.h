@@ -14,11 +14,12 @@ public:
 	void rotateClockwise();
 	CubeColour* replaceLeftRow(CubeColour newRow[]);
 	CubeColour* replaceRightRow(CubeColour newRow[]);
-	CubeColour* replaceTopRow(CubeColour newRow[]);
-	CubeColour* replaceBottomRow(CubeColour newRow[]);
-	CubeColour* getBottomRow();
+	CubeColour* replaceUpRow(CubeColour newRow[]);
+	CubeColour* replaceDownRow(CubeColour newRow[]);
+	CubeColour* getDownRow();
 	CubeColour* getRightRow();
 	CubeColour* getLeftRow();
+	CubeColour* getUpRow();
 
 	string toString();
 

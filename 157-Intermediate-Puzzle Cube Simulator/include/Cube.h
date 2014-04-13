@@ -18,8 +18,8 @@ public:
 	CubeFace getFront();
 
 private:
-	CubeFace *bottom;
-	CubeFace *top;
+	CubeFace *down;
+	CubeFace *up;
 	CubeFace *front;
 	CubeFace *right;
 	CubeFace *back;
