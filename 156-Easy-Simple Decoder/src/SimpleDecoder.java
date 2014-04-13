@@ -17,5 +17,10 @@ public class SimpleDecoder {
 		// Read the file into a byte array
 		Path inputFilePath = Paths.get(inputFile);
 		byte[] inputData = Files.readAllBytes(inputFilePath);
+
+		// Minus 4 from all the bytes
+		for (int i = 0; i < inputData.length; i++) {
+			inputData[i] -= 4;
+		}
 	}
 }
