@@ -12,4 +12,5 @@ def isTornNumber(n):
 # Test every possible 4 digit number
 for i in range(1000,10000):
 	if isTornNumber(i):
-		print "Found a torn number: {}".format(i)
+		if i != 3025:
+			print "Found a torn number: {}".format(i)
