@@ -16,6 +16,11 @@ public:
 
 	void applyMove(string move);
 	CubeFace getFront();
+	CubeFace getBack();
+	CubeFace getLeft();
+	CubeFace getRight();
+	CubeFace getUp();
+	CubeFace getDown();
 
 private:
 	CubeFace *down;
@@ -24,6 +29,8 @@ private:
 	CubeFace *right;
 	CubeFace *back;
 	CubeFace *left;
+
+	CubeColour *flipRow(CubeColour *rowToFlip);
 };
 
 #endif

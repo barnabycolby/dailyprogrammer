@@ -19,7 +19,13 @@ int main(int argc, char *argv[]) {
 	}
 
 	// Print the output
-	std::cout << endl << cube.getFront().toString() << endl;
+	cout << endl;
+	cout << "Up"    << endl << cube.getUp().toString()    << endl << endl;
+	cout << "Down"  << endl << cube.getDown().toString()  << endl << endl;
+	cout << "Left"  << endl << cube.getLeft().toString()  << endl << endl;
+	cout << "Right" << endl << cube.getRight().toString() << endl << endl;
+	cout << "Front" << endl << cube.getFront().toString() << endl << endl;
+	cout << "Back"  << endl << cube.getBack().toString()  << endl;
 
 	// Return cleanly
 	return 0;
