@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 # Read the input file into a string
 with open("input.txt", "r") as inputFile:
 	inputString=inputFile.read().replace('\n','')
@@ -26,3 +28,42 @@ while i < len(inputString):
 
 	# Increment the counter
 	i += 1
+
+# Print the characters row by row
+for rowIndex in reversed(range(1, height+1)):
+	# Iterate over the characters in the list
+	i = 0
+	while i < len(inputString):
+		c = inputString[i]
+		value = 0
+
+		# If character is a number, add it's value to the count
+		spaceCount = 0
+		if c.isdigit():
+			spaceCount += int(c)
+			value += spaceCount
+			# Skip the current character in the loop because we've already dealt with it
+			i += 1
+			c = inputString[i]
+
+		# Add the characters value to the count
+		# The ASCII value of a is 97
+		value += ord(c) - 96
+
+		# Calculate whether a symbol should be printed
+		if value >= rowIndex:
+			if rowIndex > spaceCount:
+				# Print the symbol
+				print('O', end="")
+			else:
+				# Print a space
+				print(' ', end="")
+		else:
+			# Print a space
+			print(' ', end="")
+
+		# Increment the counter
+		i += 1
+
+	# Print a new line
+	print()
