@@ -21,15 +21,17 @@ Where spaces are identified with a capital S (In your actual output, it should b
 ##Sample Input
 j3f3e3e3d3d3c3cee3c3c3d3d3e3e3f3fjij3f3f3e3e3d3d3c3cee3c3c3d3d3e3e3fj
 ##Sample Output
+```
 .                 . .                 .
-.\*              \*\*...\*\*              \*.
-.\*\*\*          \*\*\*\*...\*\*\*\*          \*\*\*.
-\*-----      ------\*\*\*------      -----\*
-\*-------  --------\*\*\*--------  -------\* 
-\*+++++++\*\*++++++++\*\*\*++++++++\*\*+++++++\*
+.*              **...**              *.
+.***          ****...****          ***.
+*-----      ------***------      -----*
+*-------  --------***--------  -------* 
+*+++++++**++++++++***++++++++**+++++++*
 -+++++++--++++++++---++++++++--+++++++-
 -       --        ---        --       -
-\+       ++        +++        ++       +
-\+       ++        +++        ++       +
++       ++        +++        ++       +
++       ++        +++        ++       +
+```
 ##Notes
 Try making your own buildings as well instead of just testing the samples. Don't forget to include your favourite ASCII construction with your solution!
