@@ -4,6 +4,10 @@ from __future__ import print_function
 with open("input.txt", "r") as inputFile:
 	inputString=inputFile.read().replace('\n','')
 
+def mapCharToSymbol(c):
+	dictionary = {1:'+', 2:'+', 3:'_', 4:'_', 5:'*', 6:'*', 7:'*', 8:'-', 9:'-', 10:'-'}
+	return dictionary[c]
+
 # Calculate the height of the image
 height = 0
 i = 0
@@ -54,7 +58,8 @@ for rowIndex in reversed(range(1, height+1)):
 		if value >= rowIndex:
 			if rowIndex > spaceCount:
 				# Print the symbol
-				print('O', end="")
+				symbolValue = rowIndex - spaceCount
+				print(mapCharToSymbol(symbolValue), end="")
 			else:
 				# Print a space
 				print(' ', end="")
