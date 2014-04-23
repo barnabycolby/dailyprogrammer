@@ -7,6 +7,7 @@ Welcome to my first attempt at a theme week. All week long the challenges will b
 The best way to see this game and understand the rules is to do some basic research.
 * [Wikipedia Entry Link](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
 * [Instructional Video](https://www.youtube.com/watch?v=iapcKVn7DdY)
+
 The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie)
 ##Input:
 Get from the user their move being Rock, Paper Scissors, Lizard, Spock. Design and how you do it is up to you all.
