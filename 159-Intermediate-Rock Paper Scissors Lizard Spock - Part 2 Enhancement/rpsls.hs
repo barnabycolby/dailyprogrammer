@@ -36,9 +36,11 @@ Rock     `attacks` Spock    = Lose
 Rock     `attacks` Scissors = Win
 Scissors `attacks` Rock     = Lose
 
-main = do
-	g <- getStdGen
-	let computerHand :: Hand; computerHand = toEnum $ fst $ randomR (0,4) g
+gameLoop :: StdGen -> IO ()
+gameLoop randomNumberGenerator = do
+	let computerHand :: Hand
+	    (randomValue, newRandomNumberGenerator) = randomR (0,4) randomNumberGenerator
+	    computerHand = toEnum randomValue
 	putStrLn "Rock, Paper, Scissors, Lizard or Spock: "
 	userHandString <- getLine
 	if userHandString == "Quit"
@@ -50,4 +52,9 @@ main = do
 			Win -> "You win."
 			Draw -> "Draw."
 			Lose -> "Computer wins."
-		main
+		gameLoop newRandomNumberGenerator
+
+main :: IO ()
+main = do
+	randomNumberGenerator <- getStdGen
+	gameLoop randomNumberGenerator
