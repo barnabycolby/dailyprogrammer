@@ -38,15 +38,15 @@ Scissors `attacks` Rock     = Lose
 
 main = do
 	g <- getStdGen
-	let computer = toEnum $ fst $ randomR (0,4) g
+	let computerHand :: Hand; computerHand = toEnum $ fst $ randomR (0,4) g
 	putStrLn "Rock, Paper, Scissors, Lizard or Spock: "
-	handString <- getLine
-	if handString == "Quit"
+	userHandString <- getLine
+	if userHandString == "Quit"
 	then return ()
 	else do
-		userHand <- return $ read handString
-		putStrLn $ "Computer: " ++ show computer
-		putStrLn $ case userHand `attacks` computer of
+		userHand <- return $ read userHandString
+		putStrLn $ "Computer: " ++ show computerHand
+		putStrLn $ case userHand `attacks` computerHand of
 			Win -> "You win."
 			Draw -> "Draw."
 			Lose -> "Computer wins."
