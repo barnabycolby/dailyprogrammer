@@ -40,9 +40,14 @@ main = do
 	g <- getStdGen
 	let computer = toEnum $ fst $ randomR (0,4) g
 	putStrLn "Rock, Paper, Scissors, Lizard or Spock: "
-	user <- readLn
-	putStrLn $ "Computer: " ++ show computer
-	putStrLn $ case user `attacks` computer of
-		Win -> "You win."
-		Draw -> "Draw."
-		Lose -> "Computer wins."
+	handString <- getLine
+	if handString == "Quit"
+	then return ()
+	else do
+		userHand <- return $ read handString
+		putStrLn $ "Computer: " ++ show computer
+		putStrLn $ case userHand `attacks` computer of
+			Win -> "You win."
+			Draw -> "Draw."
+			Lose -> "Computer wins."
+		main
