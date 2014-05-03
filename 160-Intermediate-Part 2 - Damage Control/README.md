@@ -26,16 +26,24 @@ The second line consists of space-separated integers. The total number of intege
 Output will be to STDOUT, or written to a file output.txt in the working directory. Output will contain a single integer consisting of the minimum number of Reinforcement Kits required.
 ##Sample Inputs and Outputs
 ###Sample Input 1
+```
 8 1
 
 3
+```
 ###Sample Output 1
+```
 7
+```
 ###Sample Input 2
+```
 20 3
 
 3 6 14
+```
 ###Sample Output 2
+```
 35
+```
 ##Notes
 Thanks again to /u/202halffound
