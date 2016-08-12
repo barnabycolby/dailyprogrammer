@@ -1,0 +1,25 @@
+{
+  "name": "splurthian-chemistry-101",
+  "version": "1.0.0",
+  "description": "reddit.com/r/dailyprogrammer challenge 275",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barnabycolby/dailyprogrammer.git"
+  },
+  "author": "Barnaby Colby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barnabycolby/dailyprogrammer/issues"
+  },
+  "homepage": "https://github.com/barnabycolby/dailyprogrammer#readme",
+  "dependencies": {
+      "grunt": "latest",
+      "grunt-contrib-nodeunit": "latest",
+      "grunt-jslint": "latest",
+      "load-grunt-config": "latest"
+  }
+}
