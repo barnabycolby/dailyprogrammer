@@ -28,6 +28,12 @@
         },
         tullium: function (test) {
             performTest(test, 'Tullium', 'Ty', false);
+        },
+        one_letter: function (test) {
+            performTest(test, 'Boron', 'B', false);
+        },
+        three_letters: function (test) {
+            performTest(test, 'Helium', 'Hel', false);
         }
     };
 }());
