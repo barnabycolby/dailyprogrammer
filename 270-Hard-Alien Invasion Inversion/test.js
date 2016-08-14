@@ -6,7 +6,7 @@
 
     function performTest(test, expected, field) {
         test.expect(1);
-        test.ok(calculateLargestCropSquare(field) === expected);
+        test.equal(calculateLargestCropSquare(field), expected);
         test.done();
     }
 
