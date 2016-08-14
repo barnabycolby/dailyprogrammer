@@ -1,4 +1,4 @@
-/*global module, console */
+/*global module */
 (function () {
     'use strict';
 
@@ -7,6 +7,11 @@
 
     function isValidSquare(field, firstCropRow, firstCropColumn, size) {
         var i, j;
+
+        // First we check that the bottom right crop actually exists
+        if (firstCropRow + size > field.length || firstCropColumn + size > field.length) {
+            return false;
+        }
 
         for (i = firstCropRow; i < firstCropRow + size && i < field.length; i += 1) {
             for (j = firstCropColumn; j < firstCropColumn + size && j < field.length; j += 1) {
@@ -32,7 +37,7 @@
                 largestCropSquareFound = true;
             } else {
                 // First we check the vertical squares
-                for (i = startRow; i < bottomRightRow; i += 1) {
+                for (i = startRow; i <= bottomRightRow; i += 1) {
                     if (field[i][bottomRightColumn] !== crop) {
                         largestCropSquareFound = true;
                     }
@@ -40,7 +45,7 @@
 
                 // Next we check the horizontal squares
                 if (!largestCropSquareFound) {
-                    for (i = startColumn; i < bottomRightColumn; i += 1) {
+                    for (i = startColumn; i <= bottomRightColumn; i += 1) {
                         if (field[bottomRightRow][i] !== crop) {
                             largestCropSquareFound = true;
                         }
@@ -88,13 +93,15 @@
             possibleBeatingSquare = field[i].indexOf(cropSequenceString, firstUncheckedColumn);
 
             // If we found a possible beating square, we need to check whether it actually is a beating square
-            if (possibleBeatingSquare !== -1 && isValidSquare(field, i, possibleBeatingSquare, cropSequenceString.length)) {
-                // Expand the square to find its largest form
-                largestCropSquare = getLargestExpansion(field, i, possibleBeatingSquare, cropSequenceString.length);
+            if (possibleBeatingSquare !== -1) {
+                if (isValidSquare(field, i, possibleBeatingSquare, cropSequenceString.length)) {
+                    // Expand the square to find its largest form
+                    largestCropSquare = getLargestExpansion(field, i, possibleBeatingSquare, cropSequenceString.length);
+                }
 
                 // We may not have exhausted the current row, so we decrement i so that the next iteration deals with the same row
                 // And we also set the value of firstUncheckedColumn appropriately
-                nextFirstUncheckedColumn = possibleBeatingSquare + largestCropSquare;
+                nextFirstUncheckedColumn = possibleBeatingSquare + 1;
                 if (nextFirstUncheckedColumn < gridSize) {
                     i -= 1;
                     firstUncheckedColumn = nextFirstUncheckedColumn;
@@ -102,7 +109,6 @@
                     firstUncheckedColumn = 0;
                 }
             } else {
-                // We have exhausted this row and will be moving on to the next, so we must reset the firstUncheckedColumn variable
                 firstUncheckedColumn = 0;
             }
         }
